@@ -1,4 +1,4 @@
-import { Meta, Links } from "@remix-run/react";
+import { Meta, Links, Outlet } from "@remix-run/react";
 import PropTypes from "prop-types";
 import styles from "./styles/index.css";
 
@@ -39,7 +39,7 @@ export function links() {
 export default function App() {
   return (
     <Document>
-      <h1>Desde App</h1>
+      <Outlet />
     </Document>
   );
 }
