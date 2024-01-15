@@ -45,6 +45,9 @@ module.exports = {
           { name: "Link", linkAttribute: "to" },
           { name: "NavLink", linkAttribute: "to" }
         ]
+      },
+      rules: {
+        "react/prop-types": "off"
       }
     },
 

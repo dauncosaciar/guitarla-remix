@@ -1,5 +1,4 @@
 import { Meta, Links, Outlet, Scripts, LiveReload } from "@remix-run/react";
-import PropTypes from "prop-types";
 import Header from "~/components/header";
 import Footer from "~/components/footer";
 import styles from "~/styles/index.css";
@@ -65,7 +64,3 @@ function Document({ children }) {
     </html>
   );
 }
-
-Document.propTypes = {
-  children: PropTypes.node.isRequired
-};
