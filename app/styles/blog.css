@@ -13,8 +13,6 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.post {
-}
 .post .contenido {
   padding: 1.5rem;
 }
@@ -23,7 +21,11 @@
   font-size: 2.8rem;
   margin: 0;
 }
-.post .contenido .resumen {
+.post .fecha {
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+.post .resumen {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
