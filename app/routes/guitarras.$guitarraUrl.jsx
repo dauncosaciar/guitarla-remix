@@ -2,6 +2,20 @@ import { useLoaderData } from "@remix-run/react";
 import { getGuitarra } from "~/models/guitarras.server";
 import styles from "~/styles/guitarras.css";
 
+export async function loader({ params }) {
+  const { guitarraUrl } = params;
+  const guitarra = await getGuitarra(guitarraUrl);
+
+  if (guitarra.data.length === 0) {
+    throw new Response("", {
+      status: 404,
+      statusText: "Guitarra No Encontrada"
+    });
+  }
+
+  return guitarra;
+}
+
 export function meta({ data }) {
   return [
     {
@@ -21,14 +35,6 @@ export function links() {
       href: styles
     }
   ];
-}
-
-export async function loader({ params }) {
-  const { guitarraUrl } = params;
-
-  const guitarra = await getGuitarra(guitarraUrl);
-
-  return guitarra;
 }
 
 function Guitarra() {
