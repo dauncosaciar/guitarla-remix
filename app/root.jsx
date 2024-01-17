@@ -16,11 +16,11 @@ export function meta({ error }) {
   if (error) {
     return [
       {
-        title: "GuitarLA - Guitarra No Encontrada"
+        title: `GuitarLA - ${error.statusText}`
       },
       {
         name: "description",
-        content: "Guitarras, venta de guitarras, guitarra no encontrada"
+        content: `Guitarras, venta de guitarras, ${error.statusText}`
       }
     ];
   }
