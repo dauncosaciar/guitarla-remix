@@ -16,7 +16,7 @@ export function meta({ error }) {
   if (error) {
     return [
       {
-        title: "GuitarLA- Guitarra No Encontrada"
+        title: "GuitarLA - Guitarra No Encontrada"
       },
       {
         name: "description",
