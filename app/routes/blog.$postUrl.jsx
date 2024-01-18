@@ -1,7 +1,6 @@
 import { useLoaderData } from "@remix-run/react";
 import { getPost } from "~/models/posts.server";
 import { formatearFecha } from "~/utils/helpers";
-import styles from "~/styles/blog.css";
 
 export async function loader({ params }) {
   const { postUrl } = params;
@@ -25,15 +24,6 @@ export function meta({ data }) {
     {
       name: "description",
       content: `Guitarras, venta de guitarras, guitarra ${data.data[0].attributes.titulo}`
-    }
-  ];
-}
-
-export function links() {
-  return [
-    {
-      rel: "stylesheet",
-      href: styles
     }
   ];
 }
