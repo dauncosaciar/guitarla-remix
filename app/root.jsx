@@ -81,12 +81,29 @@ export default function App() {
     }
   };
 
+  const actualizarCantidad = guitarra => {
+    const carritoActualizado = carrito.map(guitarraState => {
+      if (guitarraState.id === guitarra.id) {
+        guitarraState.cantidad = guitarra.cantidad;
+      }
+      return guitarraState;
+    });
+    setCarrito(carritoActualizado);
+  };
+
+  const eliminarGuitarra = id => {
+    const carritoActualizado = carrito.filter(guitarraState => guitarraState.id !== id);
+    setCarrito(carritoActualizado);
+  };
+
   return (
     <Document>
       <Outlet
         context={{
           carrito,
-          agregarCarrito
+          agregarCarrito,
+          actualizarCantidad,
+          eliminarGuitarra
         }}
       />
     </Document>
